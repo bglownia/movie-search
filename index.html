@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie search</title>
+  <meta name="description" content="Search movies in IMDb">
+  <meta name="author" content="Bartlomiej Glownia">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Movie search</h1>
+    <form action="?" id="search-form">
+      <div style="flex-grow: 1; margin-right: 12px;">
+        <label>Title</label>
+        <input type="text" name="s" required style="width: 100%"/>
+      </div>
+      <div style="margin-right: 12px;">
+        <label>Year</label>
+        <input type="text" size="4" maxlength="4" name="y" pattern="\d{4}" placeholder="YYYY"/>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    <div id="search-results"></div>
+  </main>
+  <template id="movie-template">
+    <div class="movie">
+      <img class="movie-poster" onerror="this.src = noImage"/>
+      <a href="https://www.imdb.com/title/tt1877830" class="movie-link"><span data-var="Title"></span> (<span data-var="Year"></span>)</a>
+    </div>
+  </template>
+  <script src="script.js"></script>
+</body>
+</html>
